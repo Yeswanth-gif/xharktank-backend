@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
-const Pitch = require('./models/Pitchscema');
+const Pitch = require('./models/Pitchscema.js');
 mongoose.connect("mongodb://localhost:27017/xharktank", {useNewUrlParser : true});
 
 
