@@ -19,7 +19,6 @@ local.properties
 
 # Locally stored "Eclipse launch configurations"
 *.launch
-package-lock.json
 
 # PyDev specific (Python IDE for Eclipse)
 *.pydevproject
