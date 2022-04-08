@@ -16,7 +16,7 @@ let a = [1]
 
 let id = String(a.length);
 
-app.post('/pitches', async (req, res) => {
+app.post('/pitches',  (req, res) => {
     const reqresult = req.body;
     const data = new Pitch({
         id : id,
@@ -26,7 +26,10 @@ app.post('/pitches', async (req, res) => {
         askAmount : reqresult.askAmount,
         equity : reqresult.equity
     })
-    await data.save(function(err, dat){
+    if(data.equity > 100 || data.askAmount < 0){
+        return res.status(400).json();
+    }
+     data.save(function(err, dat){
         if(err){return res.status(400).json()}
         else{
             a.push(1);
