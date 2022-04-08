@@ -10,4 +10,4 @@ const pitchSchema = new mongoose.Schema({
     offers : { type : Array , "default" : [] }
 }, {versionKey : false})
 
-module.exports = mongoose.model("Pitch", pitchSchema);
+module.exports = mongoose.model("Pitch", pitchSchema, "pitches");
