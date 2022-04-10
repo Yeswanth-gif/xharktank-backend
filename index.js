@@ -2,9 +2,9 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const Pitch = require( __dirname + '/models/PitchScema.js');
-
-mongoose.connect("mongodb://localhost:27017/xharktank", {useNewUrlParser : true});
-
+require('dotenv').config()
+mongoose.connect(process.env.MONGODB_URI ||"mongodb://localhost:27017/xharktank", {useNewUrlParser : true});
+const port = process.env.PORT || 8081;
 
 const app = express();
 app.use(bodyParser.json())
@@ -94,6 +94,6 @@ app.get('/pitches/:pitch/', async (req, res) => {
     
 })
 
-app.listen(8081, () => {
+app.listen(port, () => {
     console.log("SErver is Running");
 })
