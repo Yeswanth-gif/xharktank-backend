@@ -3,7 +3,7 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const Pitch = require( __dirname + '/models/PitchScema.js');
 
-mongoose.connect("mongodb://localhost:27017/xharktank3", {useNewUrlParser : true});
+mongoose.connect("mongodb://localhost:27017/xharktank", {useNewUrlParser : true});
 
 
 const app = express();
